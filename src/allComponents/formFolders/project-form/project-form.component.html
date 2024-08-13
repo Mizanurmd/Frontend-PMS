@@ -1,0 +1,75 @@
+<div mat-dialog-title class="header">
+  <h1>Project Form</h1>
+
+</div>
+
+<form [formGroup]="proAdform" (ngSubmit)="submitForm()">
+  <div mat-dialog-content class="formHear">
+
+
+    <div class="container">
+      <mat-form-field appearance="outline">
+        <mat-label>project's Name</mat-label>
+        <input matInput placeholder="project name" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Introduction</mat-label>
+        <input matInput placeholder="Project introduction" formControlName="intro">
+      </mat-form-field>
+    </div>
+
+    <!-- Owner Column -->
+    <div class="container">
+      <mat-form-field appearance="outline">
+        <mat-label>Owner</mat-label>
+        <input matInput placeholder="Owner name" formControlName="owner">
+      </mat-form-field>
+      <!-- Status Column -->
+      <mat-form-field appearance="outline">
+        <mat-label>Select Project Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option *ngFor="let val of status" [value]="val">{{val}}</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+    <!-- Date Fields -->
+    <div class="container">
+      <mat-form-field>
+        <mat-label>Choose start date</mat-label>
+        <input matInput [matDatepicker]="startDateTime" formControlName="startDateTime">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="startDateTime"></mat-datepicker-toggle>
+        <mat-datepicker #startDateTime></mat-datepicker>
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Choose end date</mat-label>
+        <input matInput [matDatepicker]="endDateTime" formControlName="endDateTime">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="endDateTime"></mat-datepicker-toggle>
+        <mat-datepicker #endDateTime></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <!-- Project Members -->
+    <div class="select">
+      <mat-form-field appearance="outline">
+        <mat-label>Select Project Members</mat-label>
+        <mat-select formControlName="projectMembers" multiple>
+          <mat-option *ngFor="let val of members" [value]="val">{{val}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <!-- action column -->
+    <div mat-dialog-actions class="action">
+      <button mat-raised-button class="btn btn-danger" type="button" (click)="onNoClick()">Cancel</button>
+      <button mat-raised-button style="margin-left: 10px;" class="btn btn-primary" type="submit">{{data ? 'Update':
+        'Save'}}</button>
+
+    </div>
+
+  </div>
+</form>

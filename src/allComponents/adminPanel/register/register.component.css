@@ -1,0 +1,22 @@
+/* registration.component.css */
+.container {
+  max-width: 600px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+input,
+select {
+  border-radius: 0.25rem;
+}
+
+.btn {
+  width: 100%;
+  margin-top: 1rem;
+}

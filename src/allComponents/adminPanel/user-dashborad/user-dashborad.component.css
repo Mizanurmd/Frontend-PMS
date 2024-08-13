@@ -1,0 +1,48 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.button-style {
+  margin: 0 12px; /* Space between buttons */
+  color: #fff;
+}
+
+.link-style {
+  text-decoration: none;
+  color: inherit; /* Inherit the color from the button */
+  padding: 8px 16px; /* Add padding to create space around the link text */
+  display: inline-block; /* Ensures the padding applies properly */
+}
+mat-toolbar {
+  padding: 0 16px;
+}
+
+mat-toolbar button.mat-raised-button {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+  
+  /* Style the container to align its content to the right */
+.right-align-container {
+  text-align: right;
+}
+
+/* Optional: Style the button for better appearance */
+.btn-btn.primary {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff; /* Bootstrap primary color */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-btn.primary:hover {
+  background-color: #0056b3; /* Darker shade of primary color */
+}
+
+
+
+  

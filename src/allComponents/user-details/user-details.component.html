@@ -1,0 +1,50 @@
+<mat-toolbar color="primary">
+  <span>ASSIGNMENT PROJECT BY CNS -2024</span>
+  <span class="example-spacer"></span>
+  <a mat-button routerLink="/register" mat-raised-link color="success" class="link-anccent">ADD NEW USER</a>
+
+</mat-toolbar>
+<div class="border container">
+  <button class="btn btn-md btn-outline-primary">
+    <a mat-button routerLink="/register" mat-raised-link color="success" class="link-anccent">ADD NEW USER</a>
+  </button>
+  <button class="btn btn-md btn-outline-primary">
+    <a mat-button routerLink="/user-dashboard" mat-raised-link color="success" class="link-anccent">BACK</a>
+
+  </button>
+
+</div>
+
+<table class="wonderful-table">
+  <thead>
+    <tr>
+      <th>#ID</th>
+      <th>Full Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Role</th>
+
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let u of users">
+      <td>{{u.id}}</td>
+      <td>{{u.name}}</td>
+      <td>{{u.username}}</td>
+      <td>{{u.email}}</td>
+      <td>{{u.role}}</td>
+
+      <td>
+
+        <button type="button" class="btn btn-primary">
+          <span class="material-icons">update</span>
+        </button>
+
+        <button type="button" class="btn btn-danger">
+          <span class="material-icons">delete</span>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

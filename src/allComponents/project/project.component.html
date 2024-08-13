@@ -1,0 +1,46 @@
+<div>
+    <h1>Projects</h1>
+    <ul>
+      <li *ngFor="let project of projects">
+        <span (click)="viewProject(project.id!)">{{ project.name }}</span>
+        <button (click)="deleteProject(project.id!)">Delete</button>
+      </li>
+    </ul>
+  
+    <div *ngIf="selectedProject">
+      <h2>Project Details</h2>
+      <p>Name: {{ selectedProject.name }}</p>
+      <p>Intro: {{ selectedProject.intro }}</p>
+      <p>Status: {{ selectedProject.status }}</p>
+      <p>Start Date: {{ selectedProject.startDateTime }}</p>
+      <p>End Date: {{ selectedProject.endDateTime }}</p>
+      <!-- Add more fields as needed -->
+  
+      <!-- Form to update project -->
+      <form (ngSubmit)="updateProject(selectedProject.id!, selectedProject)">
+        <!-- Form fields to update project details -->
+        <button type="submit">Update Project</button>
+      </form>
+    </div>
+  
+    <!-- Form to create a new project -->
+    <form (ngSubmit)="createProject()">
+      <label>Name:
+        <input [(ngModel)]="newProject.name" name="name" required>
+      </label>
+      <label>Intro:
+        <input [(ngModel)]="newProject.intro" name="intro" required>
+      </label>
+      <label>Status:
+        <input [(ngModel)]="newProject.status" name="status" required type="number">
+      </label>
+      <label>Start Date:
+        <input [(ngModel)]="newProject.startDateTime" name="startDateTime" required type="date">
+      </label>
+      <label>End Date:
+        <input [(ngModel)]="newProject.endDateTime" name="endDateTime" required type="date">
+      </label>
+      <button type="submit">Create Project</button>
+    </form>
+  </div>
+  
